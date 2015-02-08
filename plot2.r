@@ -3,7 +3,7 @@
 dat<-read.table("household_power_consumption.txt",header = TRUE, sep=";",colClasses="character")
 d<-strptime(dat$Date, "%d/%m/%Y")
 dat2<-subset(dat, d>="2007-02-01" & d<"2007-02-03")
-dat3<-rbind(dat2,dat[as.numeric(rownames(dat3[2880,]))+1,])
+dat3<-rbind(dat2,dat[as.numeric(rownames(dat2[2880,]))+1,])
 d4<-strptime(dat3$Date, "%d/%m/%Y")
 wd<-weekdays(d4,abbreviate=TRUE)
 dat4<-transform(dat3, Date = as.Date(Date),
